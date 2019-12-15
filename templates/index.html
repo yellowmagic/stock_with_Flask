@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<table border="0">
+    <tr>
+        <td>
+            <table border>
+                <tr>
+                    <th>No.</th><th>JASDAQ</th>
+                </tr>
+                {% for JASDAQ_stock in JASDAQ_stocks %}
+                    <tr>
+                        <td>{{JASDAQ_stock["id"]}}</td>
+                        <td><a href="{{url_for(".JASDAQ_show", id=JASDAQ_stock["id"])}}">{{JASDAQ_stock["code"]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </td><td valign="top">
+            <table border>
+                <tr>
+                    <th>No.</th><th>Tokyo Stock Exchange Second Section</th>
+                </tr>
+                {% for tse2nd_stock in tse2nd_stocks %}
+                    <tr>
+                        <td>{{tse2nd_stock["id"]}}</td>
+                        <td><a href="{{url_for(".tse2nd_show", id=tse2nd_stock["id"])}}">{{tse2nd_stock["code"]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </td><td valign="top">
+            <table border>
+                <tr>
+                    <th>No.</th><th>JPX400</th>
+                </tr>
+                {% for JPX400_stock in JPX400_stocks %}
+                    <tr>
+                        <td>{{JPX400_stock["id"]}}</td>
+                        <td><a href="{{url_for(".JPX400_show", id=JPX400_stock["id"])}}">{{JPX400_stock["code"]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </td><td valign="top">
+            <table border>
+                <tr>
+                    <th>No.</th><th>Mothers</th>
+                </tr>
+                {% for mothers_stock in mothers_stocks %}
+                    <tr>
+                        <td>{{mothers_stock["id"]}}</td>
+                        <td><a href="{{url_for(".mothers_show", id=mothers_stock["id"])}}">{{mothers_stock["code"]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+            </td><td valign="top">
+            <table border>
+                <tr>
+                    <th>No.</th><th>DOW</th>
+                </tr>
+                {% for DOW_stock in DOW_stocks %}
+                    <tr>
+                        <td>{{DOW_stock["id"]}}</td>
+                        <td><a href="{{url_for(".DOW_show", id=DOW_stock["id"])}}">{{DOW_stock["code"]}}</td>
+                    </tr>
+                {% endfor %}
+            </table>
+       </td>
+   </tr>
+</table>
+{% endblock %}
